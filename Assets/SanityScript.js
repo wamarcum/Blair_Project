@@ -1,9 +1,10 @@
 ﻿#pragma strict
 
 var sanityText:GUIText;
-var currentSanity = 100;
+var currentSanity : int = 100;
+
 // Something isn't working here. I'm not sure what I'm doing wrong, but this variable timeScript is throwing intense errors.
-private var timeScript = GameObject.Find("TOD").GetComponent(TOD);
+var timeScript : TOD;
 
 function Start () {
 	sanityText.text = "Sanity: " + currentSanity.ToString();
@@ -12,12 +13,13 @@ function Start () {
 
 function Update () {
 	sanityText.text = "Sanity: " + currentSanity.ToString();
-	//add suicide ending.
+	
+	//add suicide ending. <- Lol.
 }
 
 //timeScript seems to be having its problems here. Any ideas to implement this better?
 function deplete(){
-	if (timeScript.Hour > 5 && timeScript.Hour < 20){
+	if (timeScript.Hour > 5f && timeScript.Hour < 20f){
 		while (currentSanity > 0 && currentSanity < 98){
 			yield WaitForSeconds(20);
 			currentSanity += 3;

@@ -350,6 +350,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sanityText: {fileID: 1091443150}
   currentSanity: 100
+  timeScript: {fileID: 0}
 --- !u!114 &60753893
 MonoBehaviour:
   m_ObjectHideFlags: 0
